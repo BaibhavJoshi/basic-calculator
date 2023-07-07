@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to right, rgb(225, 0, 255), rgb(0, 195, 255));
+}
+
+.calculator-grid{
+    display:grid;
+    justify-content:center;
+    align-content:center;
+    min-height:100vh;
+    max-width:30%;
+    margin:0 auto;
+
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: minmax(150px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button{
+    cursor:pointer;
+    font-size:x-large;
+    padding:15px;
+    border:1px solid white;
+    outline:none;
+
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+      
+.calculator-grid > button:hover{
+    background-color:rgba(255,255,255,1);
+}
+
+.output-screen{
+    color:white;
+    font-size: xx-large;
+    padding:30px;
+    border-top:5px solid white;
+    border-left:1px solid white;
+    border-right:1px solid white;
+    border-bottom:3px solid white;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    justify-content:space-between;
+
+    word-wrap:break-word;
+    word-break:break-all;
+
+    grid-column:span 4;
+
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+
+.output-screen .previous-operand{
+    color:rgba(255,255,255,0.75);
+    font-size:x-large;
+}
+
+.btn-span-two{
+    grid-column:span 2;
+}
+
+@media(max-width:1300px){
+    .calculator-grid{
+        max-width: 40%;
+    }
+}
+
+@media(max-width:900px){
+    .calculator-grid{
+        max-width: 60%;
+    }
+}
+
+@media(max-width:500px){
+    .calculator-grid{
+        max-width: 70%;
+    }
+}
